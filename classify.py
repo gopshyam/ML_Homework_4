@@ -1,7 +1,7 @@
 #!/ usr/bin/env python
 
 import pickle
-from create_vocabulary import find_prior
+from create_vocabulary import find_prior, find_stop_words
 
 test_data_file = "hw4data/testdata.txt"
 test_label_file = "hw4data/testlabels.txt"
@@ -16,8 +16,11 @@ def predict(sentence, vocabulary):
     one_count = sum([vocabulary[x][1] for x in vocabulary])
     total_count = zero_count + one_count
     zero_prior, one_prior = find_prior()
+    stop_words = find_stop_words()
 
     for word in sentence.split(' '):
+        if word in stop_words:
+            continue
         if word in vocabulary:
             zero_likelihood = vocabulary[word][0] + 1 / float(zero_count + M)
             one_likelihood = vocabulary[word][1] + 1 / float(one_count + M)

@@ -13,14 +13,18 @@ def find_prior():
     return train_labels.count(0)/float(len(train_labels)), train_labels.count(1)/float(len(train_labels))
 
 
+
+def find_stop_words():
+    with open(stop_words_file, 'r') as f:
+        stop_words = [x.strip() for x in f.readlines()]
+    return stop_words
+
+
 def main():
     
     sentences = list()
     vocabulary = dict()
-    stop_words = list()
-
-    with open(stop_words_file, 'r') as f:
-        stop_words = [x.strip() for x in f.readlines()]
+    stop_words = find_stop_words()   
 
     with open(train_label_file, 'r') as f:
         train_labels = [int(x.strip()) for x in f.readlines()]
