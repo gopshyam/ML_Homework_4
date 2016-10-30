@@ -22,12 +22,12 @@ def predict(sentence, vocabulary):
         if word in stop_words:
             continue
         if word in vocabulary:
-            zero_likelihood = vocabulary[word][0] + 1 / float(zero_count + M)
-            one_likelihood = vocabulary[word][1] + 1 / float(one_count + M)
+            zero_likelihood = (vocabulary[word][0] + 1) / float(zero_count + 2)
+            one_likelihood = (vocabulary[word][1] + 1) / float(one_count + 2)
             evidence = sum(vocabulary[word]) / float(total_count)
         else:
-            zero_likelihood = 1 / float(zero_count + M)
-            one_likelihood = 1 / float(one_count + M)
+            zero_likelihood = 1 / float(zero_count + 2)
+            one_likelihood = 1 / float(one_count + 2)
             evidence = 2 / float(total_count)
 
         zero_prob += (zero_likelihood * zero_prior) / float(evidence)
