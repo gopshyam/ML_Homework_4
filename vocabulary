@@ -472,7 +472,7 @@ aI0
 asS'give'
 p189
 (lp190
-I4
+I3
 aI1
 asS'overshadow'
 p191
@@ -592,7 +592,7 @@ aI1
 asS'learn'
 p237
 (lp238
-I5
+I3
 aI0
 asS'making'
 p239
@@ -792,7 +792,7 @@ aI1
 asS'man'
 p317
 (lp318
-I4
+I3
 aI0
 asS'natural'
 p319
@@ -967,7 +967,7 @@ aI1
 asS'good'
 p387
 (lp388
-I10
+I9
 aI15
 asS'return'
 p389
@@ -1072,7 +1072,7 @@ aI0
 asS'fish'
 p429
 (lp430
-I2
+I1
 aI0
 asS'hard'
 p431
@@ -1489,11 +1489,11 @@ p595
 (lp596
 I0
 aI1
-asS'naturally'
+asS'happy'
 p597
 (lp598
 I0
-aI1
+aI9
 asS'powers'
 p599
 (lp600
@@ -1842,7 +1842,7 @@ aI0
 asS'trade'
 p737
 (lp738
-I2
+I1
 aI0
 asS'shaping'
 p739
@@ -1977,7 +1977,7 @@ aI0
 asS'ability'
 p791
 (lp792
-I4
+I3
 aI1
 asS'nature'
 p793
@@ -2288,7 +2288,7 @@ asS'will'
 p915
 (lp916
 I7
-aI90
+aI87
 asS'suppose'
 p917
 (lp918
@@ -2392,7 +2392,7 @@ aI0
 asS'inch'
 p957
 (lp958
-I2
+I1
 aI0
 asS'party'
 p959
@@ -2702,7 +2702,7 @@ aI1
 asS'judge'
 p1081
 (lp1082
-I3
+I2
 aI0
 asS'world'
 p1083
@@ -3079,11 +3079,11 @@ p1231
 (lp1232
 I0
 aI1
-asS'happy'
+asS'naturally'
 p1233
 (lp1234
 I0
-aI9
+aI1
 asS'melodic'
 p1235
 (lp1236
@@ -3177,7 +3177,7 @@ aI0
 asS'wise'
 p1271
 (lp1272
-I3
+I2
 aI2
 asS'romantic'
 p1273
@@ -3337,7 +3337,7 @@ aI0
 asS'percent'
 p1335
 (lp1336
-I2
+I1
 aI0
 asS'field'
 p1337
@@ -3367,7 +3367,7 @@ aI0
 asS'fools'
 p1347
 (lp1348
-I3
+I2
 aI0
 asS'nice'
 p1349
@@ -3377,7 +3377,7 @@ aI1
 asS'star'
 p1351
 (lp1352
-I3
+I2
 aI0
 asS'oneself'
 p1353

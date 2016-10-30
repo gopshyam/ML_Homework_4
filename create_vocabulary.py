@@ -34,6 +34,7 @@ def main():
 
     for sentence, label in zip(sentences, train_labels):
         words = sentence.strip().split(' ')
+        words = list(set(words))
         for word in words:
             if word not in stop_words:
                 if word in vocabulary:

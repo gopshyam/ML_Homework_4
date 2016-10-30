@@ -30,10 +30,10 @@ def predict(sentence, vocabulary):
             one_likelihood = 1 / float(one_count + 2)
             evidence = 2 / float(total_count)
 
-        zero_prob *= (zero_likelihood * zero_prior) / float(evidence)
-        one_prob *= (one_likelihood * one_prior) / float(evidence)
+        zero_prob *= (zero_likelihood)
+        one_prob *= (one_likelihood)
 
-    return zero_prob, one_prob
+    return (zero_prob * zero_prior), (one_prob * one_prior)
              
         
 
