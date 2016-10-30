@@ -53,19 +53,24 @@ def main():
     with open(vocabulary_file, 'r') as f:
         vocabulary = pickle.load(f)
 
+    successes = 0
     for sentence, label in zip(sentences, labels):
         zero_prob, one_prob = predict(sentence, vocabulary)
         print sentence, zero_prob, one_prob
         if zero_prob > one_prob:
             if label == 0:
                 print "SUCCESS"
+                successes += 1
             else:
                 print "ERROR"
         else:
             if label == 1:
                 print "SUCCESS"
+                successes += 1
             else:
                 print "ERROR"
+
+    print "Accuracy = " + str(successes * 100/float(len(sentences)))
 
 
 if __name__=="__main__":
