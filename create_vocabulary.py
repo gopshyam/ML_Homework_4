@@ -10,7 +10,7 @@ def find_prior():
     with open(train_label_file, 'r') as f: 
         train_labels = [int(x.strip()) for x in f.readlines()]
 
-    return train_labels.count(0)/float(len(train_labels)), train_labels.count(1)/float(len(train_labels))
+    return train_labels.count(0), train_labels.count(1), train_labels.count(0)/float(len(train_labels)), train_labels.count(1)/float(len(train_labels))
 
 
 

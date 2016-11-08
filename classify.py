@@ -15,20 +15,19 @@ def predict(sentence, vocabulary):
     zero_count = sum([vocabulary[x][0] for x in vocabulary])
     one_count = sum([vocabulary[x][1] for x in vocabulary])
     total_count = zero_count + one_count
-    zero_prior, one_prior = find_prior()
+    zero_count, one_count, zero_prior, one_prior = find_prior()
     stop_words = find_stop_words()
 
     for word in sentence.split(' '):
         if word in stop_words:
             continue
         if word in vocabulary:
-            zero_likelihood = (vocabulary[word][0] + 1) / float(zero_count + 2)
-            one_likelihood = (vocabulary[word][1] + 1) / float(one_count + 2)
-            evidence = sum(vocabulary[word]) / float(total_count)
+            zero_likelihood = (vocabulary[word][0] + 1) / float(zero_count + M + 1)
+            one_likelihood = (vocabulary[word][1] + 1) / float(one_count + M + 1)
+#            print word, zero_likelihood, one_likelihood
         else:
-            zero_likelihood = 1 / float(zero_count + 2)
-            one_likelihood = 1 / float(one_count + 2)
-            evidence = 2 / float(total_count)
+            zero_likelihood = 1 / float(zero_count + M + 1)
+            one_likelihood = 1 / float(one_count + M + 1)
 
         zero_prob *= (zero_likelihood)
         one_prob *= (one_likelihood)
@@ -56,7 +55,7 @@ def main():
     successes = 0
     for sentence, label in zip(sentences, labels):
         zero_prob, one_prob = predict(sentence, vocabulary)
-        print sentence, zero_prob, one_prob
+#        print sentence, zero_prob, one_prob
         if zero_prob > one_prob:
             if label == 0:
                 print "SUCCESS"
@@ -75,3 +74,9 @@ def main():
 
 if __name__=="__main__":
     main()
+    test_data_file = "hw4data/traindata.txt"
+    test_label_file = "hw4data/trainlabels.txt"
+    vocabulary_file = "vocabulary"
+    main()
+
+
